@@ -5,33 +5,54 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class SleepyHead {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		// boolean variables can only hold one of two values - true or false
 
 		/************************  SLEEPY HEAD  **************************/
-		boolean isWeekend;
+		boolean isWeekend = false;
 		// Write code to ask the user what day it is.
-        
+        String day= JOptionPane.showInputDialog("What day is it?");
 		// Set the boolean isWeekend based on the value they enter
-		
+		if(day.equalsIgnoreCase("Saturday")|| day.equalsIgnoreCase("Sunday")) {
+			isWeekend = true;
+		}
+		else {
+			isWeekend=false;
+		}
 		
 		// If it is the weekend, tell the user they get to sleep in.
-		
+		if(isWeekend == true) {
+			JOptionPane.showMessageDialog(null, "Yay! It is the weekend! You get to sleep in!");
+		}
 		// If it is not the weekend, tell them to get out of bed and go to school!
-		
-		
+		if(isWeekend == false) {
+			JOptionPane.showMessageDialog(null, "It is not the weekend. Get going with schoolwork!");
+		}
 		/************************   STAR STUDENT  **************************/
 
 		boolean passedExam;
 		// Write code to ask the user what percentage they scored in their last exam
-
-		
+		String exam=JOptionPane.showInputDialog("What was your last test score?");
+		int numexam =Integer.parseInt(exam);
 		// If they scored more than 70, they passed the exam.
-		// Set the boolean passedExam based on their score.
-		
+		if(numexam>70) {
+			// Set the boolean passedExam based on their score.
+		passedExam=true;
+		}
+		else {
+			passedExam=false;
+		}
 		// If the user passed the exam, congratulate them
-		
+		if(passedExam==true) {
+			JOptionPane.showMessageDialog(null, "Congratulations! You passed the exam!");
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Hmm...you didn't really get a high grade. ");
+		}
 		// otherwise, wish them better luck next time.
 		
 		
