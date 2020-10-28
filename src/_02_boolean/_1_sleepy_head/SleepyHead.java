@@ -1,5 +1,7 @@
 package _02_boolean._1_sleepy_head;
 
+import java.awt.Color;
+
 import javax.swing.JOptionPane;
 import org.jointheleague.graphical.robot.Robot;
 
@@ -63,30 +65,51 @@ public class SleepyHead {
 		while (!gameIsOver) {
 			// Ask the user if the game is over. 
 			String gameOver = JOptionPane.showInputDialog("is game over");
+			// If they answer "yes", change gameIsOver to true
 			if (gameOver.equalsIgnoreCase("yes"))
 				gameIsOver = true;
+			else {
+				gameIsOver=false;
+			}
 			
-			// If they answer "yes", change gameIsOver to true
 
 		}
 		// Tell the user "game is over" 
+		JOptionPane.showMessageDialog(null, "Yay!");
 		
 		
 		/***********************   RED SQUARE  ********************/
 		
 		boolean isRed;
 		// Ask the user what color to draw with. Based on their answer, set the isRed variable
-		
-		
-		boolean isSquare;		
+		String Red=JOptionPane.showInputDialog("What color do you want to draw with?");
+		if(Red.equalsIgnoreCase("red")) {
+			isRed=true;
+		}
+		else {
+			isRed=false;
+		}
+	
+	
 		// Now ask the user what shape to draw. Based on their answer, set the isSquare variable
-		
-		
+		boolean isSquare;
+		String Shape=JOptionPane.showInputDialog("What shape do you want draw?");
+		if(Shape.equalsIgnoreCase("square")) {
+		isSquare=true;	
+		}
+		else {
+			isSquare=false;
+		}
 		// Now you MUST use the && operator to join the booleans for this code. 
 		// Ask your teacher if you are not sure how
 		// Use an if statement to ONLY draw a red square when it has been requested (use the method below)
+		if(isRed==true && isSquare==true) {
+			drawRedSquare();
+		}
 		// otherwise, tell the user you don't know how to draw that shape
-		
+		else {
+			JOptionPane.showMessageDialog(null,"Sorry I don't know how to draw that :(");
+		}
 
 	}
 
@@ -94,5 +117,15 @@ public class SleepyHead {
 	static void drawRedSquare() {
 		Robot rob = new Robot();
 		// Complete the rest of this method
+rob.setPenColor(Color.RED);
+rob.penDown();
+rob.move(150);
+rob.turn(90);
+rob.move(150);
+rob.turn(90);
+rob.move(150);
+rob.turn(90);
+rob.move(150);
+		
 	}	
 }
