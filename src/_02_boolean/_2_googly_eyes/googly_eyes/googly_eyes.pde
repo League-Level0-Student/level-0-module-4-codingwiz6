@@ -4,7 +4,7 @@ void setup() {
   face=loadImage("Face2.png");
   face.resize(800,600);
 }
-//465R 515L 275U 325D
+
 void draw() {
   background(face);
   fill(44,176,255);
@@ -15,12 +15,14 @@ void draw() {
   ellipse(310,300,50,50);
   fill(3,0,0);
   ellipse(mouseX,mouseY,15,15);
- 
-    if(mouseX <465){
-     mouseX=465;
+ // x =310 y=300
+ // x 50 y 50 
+ // L 285 R 335 U 275 D 325
+    if(mouseX <285){
+     mouseX=285;
     }
-    if(mouseX>515){
-     mouseX=515; 
+    if(mouseX>335){
+     mouseX=335; 
     }
     if(mouseY <275){
       mouseY=275;
@@ -28,4 +30,5 @@ void draw() {
     if(mouseY>325){
      mouseY=325; 
     }
+    
 }
